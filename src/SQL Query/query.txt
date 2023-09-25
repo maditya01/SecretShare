@@ -1,0 +1,19 @@
+CREATE TABLE userinfo (
+userNo INT NOT NULL AUTO_INCREMENT,
+userId VARCHAR(255) NOT NULL UNIQUE,
+userName varchar(255) NOT NULL,
+email varchar(255) NOT NULL UNIQUE,
+password varchar(255) NOT NULL,
+PRIMARY KEY (userNo) );
+
+CREATE TABLE fileinfo (
+fileNo INT NOT NULL AUTO_INCREMENT,
+fileName varchar(255) NOT NULL,
+filePath varchar(255) NOT NULL,
+uploadedOn DATE NOT NULL,
+downloadsLeft int NOT NULL,
+uploadedBy int NOT NULL,
+availableUpto DATE NOT NULL,
+fileKey varchar(255) NOT NULL UNIQUE,
+comments varchar(255),
+PRIMARY KEY (fileNo));
