@@ -30,9 +30,9 @@ public class Server {
         while (true) {
             System.out.println("Waiting for client..");
             Socket s = ss.accept();
-            System.out.println("User.Client Arrived :)");
+            System.out.println("Accepted a client request...");
             LoginSignUp handle = new LoginSignUp(s,con);
-            System.out.println("Remember what is happening with server. Thread is creating");
+            System.out.println("Create a thread for each connection....");
             Thread thread = new Thread(handle);
             thread.start();
         }

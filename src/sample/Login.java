@@ -2,8 +2,8 @@ package sample;
 
 import AfterLogin.AfterLoginHome;
 import AfterLogin.SideBar;
+import ClientBackend.ClientAction;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -17,7 +17,7 @@ import java.io.IOException;
 
 public class Login {
 
-    ClientBackend.Client client;
+    ClientAction clientAction;
 
     @FXML
     TextField idField;
@@ -34,7 +34,7 @@ public class Login {
 
 
     public void loginAction(ActionEvent actionEvent) throws IOException {
-        boolean result = client.login(idField.getText(),passField.getText());
+        boolean result = clientAction.login(idField.getText(),passField.getText());
         if(result){
             System.out.println("inside Login Action bool YES");
             msgLabel.setText("Login Successful");
@@ -46,7 +46,7 @@ public class Login {
             mainPane.setCenter(pane2);
             SideBar loadercontroller = loader.getController();
             loadercontroller.setMainPane(mainPane);//mainPane = mainPane;
-            loadercontroller.setSocket(client.getSocket());
+            loadercontroller.setSocket(clientAction.getSocket());
             AfterLoginHome cntrl = loader2.getController();
             cntrl.idLabel.setText(idField.getText());
         }

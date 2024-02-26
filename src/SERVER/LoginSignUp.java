@@ -28,8 +28,6 @@ public class LoginSignUp implements Runnable{
     }
 
     private boolean validateLogin(Connection con, String userId, String pass) throws IOException {
-        //String userId = din.readUTF();
-        //String pass = din.readUTF();
         Password p = new Password(pass);
         String str1 = p.getHash();
         String query = "select password from userinfo where userId ="+"(?)";
@@ -71,8 +69,6 @@ public class LoginSignUp implements Runnable{
         String mail = din.readUTF();
         String pass = din.readUTF();
         boolean temp = false;
-        System.out.println("Inside signUpUser" + name);
-        //userID = din.readUTF();
         String query = "select password from userinfo where userId ="+"(?)";
         System.out.println(query);
         try{
@@ -88,22 +84,12 @@ public class LoginSignUp implements Runnable{
         finally {
             if(temp){
                 NewUser u = new NewUser(con);
-                System.out.println(u + "NewUser");
                 return u.registerUser(name,userID,mail,pass);
             }
             else{
                 return false;
             }
-            /*dout.writeBoolean(temp);
-            dout.flush();
-            if(!temp) return false;*/
         }
-        //}
-        //while(!temp);*/
-        /*String st = "Name :"+name+"\nUserID :"+userID+"\ne-mail :"+mail;
-        dout.writeUTF(st);
-        dout.flush();*/
-        //return true;
     }
 
     @Override
@@ -128,7 +114,6 @@ public class LoginSignUp implements Runnable{
                 //For new user Registration
                 else if (choice.equals(new String("SIGNUP"))) {
                     boolean b = signUpUser(con, din, dout);
-                    System.out.println(b+" this boolean value is read by client");
                     dout.writeBoolean(b);
                     dout.flush();
                 }

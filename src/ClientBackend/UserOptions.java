@@ -10,15 +10,13 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
-public class UserOptions {
-    Socket socket;
-    DataInputStream din;
-    DataOutputStream dout;
+//Here UserOptions is also a client.
+
+public class UserOptions extends NewClient {
+
 
     public UserOptions(Socket s) throws IOException {
-        this.socket = s;
-        din = new DataInputStream(socket.getInputStream());
-        dout = new DataOutputStream(socket.getOutputStream());
+        super(s);
     }
 
     public String upload(File file, int maxd, LocalDate date, String com) throws IOException {

@@ -1,5 +1,6 @@
 package sample;
 
+import ClientBackend.ClientAction;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +12,7 @@ import java.io.IOException;
 
 public class Controller {
 
-    ClientBackend.Client client;
+    ClientAction clientAction;
     @FXML
     BorderPane mainPane;
     @FXML
@@ -26,7 +27,7 @@ public class Controller {
         Login controller = loader.getController();
         controller.sidePane = sideBarPane;
         controller.mainPane = mainPane;
-        controller.client = this.client;
+        controller.clientAction = this.clientAction;
     }
 
     public void signUpAction(ActionEvent actionEvent) throws IOException {
@@ -34,7 +35,7 @@ public class Controller {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("signUp.fxml"));
         AnchorPane pane = loader.load();
         SignUp signUp = loader.getController();
-        signUp.client = this.client;
+        signUp.clientAction = this.clientAction;
         mainPane.setCenter(pane);
     }
 

@@ -1,5 +1,6 @@
 package sample;
 
+import ClientBackend.ClientAction;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -18,7 +19,7 @@ public class SignUp {
     @FXML TextField emailField;
     @FXML TextField nameField;
 
-    ClientBackend.Client client;
+    ClientAction clientAction;
 
     public void submitAction(ActionEvent actionEvent) throws IOException {
         System.out.println("Inside submitAction Handler");
@@ -39,7 +40,7 @@ public class SignUp {
             }*/
             //client.signUp();
             System.out.println(name+" "+pass+" "+email+" "+id + "\n"+"Inside submit action handler");
-            b = client.signUp(name,id,email,pass);
+            b = clientAction.signUp(name,id,email,pass);
             System.out.println(b + " client signup value");
           //while (!());
           if(b) msgLabel.setText("Registered Successfully");

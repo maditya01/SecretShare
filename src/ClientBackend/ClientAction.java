@@ -1,23 +1,15 @@
 package ClientBackend;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-public class Client {
-    Socket socket;
-    DataInputStream din;
-    DataOutputStream dout;
+public class ClientAction extends NewClient {
 
-    public Client() throws IOException {
-        System.out.println("Came here");
-        socket = new Socket("localhost", 5128);
-        System.out.println(socket);
-        System.out.println("Connection established");
-        din = new DataInputStream(socket.getInputStream());
-        dout = new DataOutputStream(socket.getOutputStream());
-        System.out.println(din+"\n"+dout);
+    public ClientAction() throws IOException {
+        super();
+    }
+    public ClientAction(Socket s) throws IOException{
+        super(s);
     }
 
     public Socket getSocket() {
