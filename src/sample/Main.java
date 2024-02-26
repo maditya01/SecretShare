@@ -17,7 +17,6 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         Controller controller = loader.getController();
         System.out.println(controller+" Controller");
-//        Calling to Client
         controller.clientAction = new ClientAction();
         primaryStage.show();
     }

@@ -4,14 +4,22 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.*;
+import java.util.Properties;
 
 public class Server {
-     String user = "root";
-     String password = "Mysql@7881";
-     String url = "jdbc:mysql://localhost:3306";
+
+     String user;
+     String password;
+     String url;
 
     public static void main(String[] args) throws IOException, SQLException {
+        FileInputStream fis = new FileInputStream("abc.properties");
+        Properties p = new Properties();
+        p.load(fis);
         Server server  = new Server();
+        server.user = p.getProperty("user");
+        server.password = p.getProperty("password");
+        server.url = p.getProperty("url");
         Connection con = null;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 

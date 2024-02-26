@@ -14,7 +14,7 @@ out/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
-
+abc.properties/
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
