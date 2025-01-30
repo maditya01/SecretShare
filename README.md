@@ -1,25 +1,78 @@
+# **Key-Based File Sharing Desktop App**  
 
-# Smart-Share
-* <h3>BASIC FEATURES:</h3>
+A **secure file-sharing application** that allows users to **upload files**, generate **unique access keys**, and set **download limits and expiration times** for controlled sharing.  
 
-    * A User is able to  register and login to the server.
+## **Problem Statement**  
 
-    * Every user is able to upload and download the files.
+Traditional file-sharing methods often come with several challenges:  
 
-    * File uploaded is transferred to the server along with all the details like owner,name,size,type.
+- ❌ **Unauthorized Access** – Public links can be misused or accessed by unintended users.  
+- ❌ **Limited Control** – Users cannot restrict downloads or set file expiration.  
+- ❌ **Complex Sharing** – Manual permissions and account-based access make the process cumbersome.  
 
-    * Uploader is able to tell how many times the given file can be downloaded. After that file is downloaded the mentioned number of times it is deleted from the server.
+## **Solution**  
 
-    * Every uploaded file has a code <b>(key)</b> generated which will be shared.
+This application provides a **key-based sharing system** where:  
 
-    *  Every user is able to download file from the server with the code given to him.
+- ✅ Users **sign up and log in** securely using **JWT authentication**.  
+- ✅ Uploaded files get a **unique access key** for controlled sharing.  
+- ✅ Only users **with the key** can download the file.  
+- ✅ Uploaders can **set download limits** and **expiration times**.  
+
+## **Tech Stack**  
+
+| Component       | Technology Used |
+|----------------|----------------|
+| **Frontend**   | JavaFX (Desktop UI) |
+| **Backend**    | Java |
+| **Communication** | Socket Programming |
+| **Database**   | MySQL |
+| **Authentication** | JWT (JSON Web Token) |
+
+## **Features**  
+
+✔️ **User Authentication** – Secure sign-up and login with JWT.  
+✔️ **File Upload & Storage** – Store files securely on the server.  
+✔️ **Key-Based Access** – Each file gets a unique key for controlled sharing.  
+✔️ **Download Limits** – Restrict the number of downloads per file.  
+✔️ **File Expiry** – Set availability duration for files.  
+✔️ **Real-Time Communication** – Uses **Socket Programming** for efficient data exchange.  
+
+## **Setup Instructions**  
+
+### **Prerequisites**  
+
+- Java **17+**  
+- MySQL **installed & running**  
+- Maven **for dependency management**  
+
+### **Steps to Run**  
+
+1. **Clone the repository:**  
+   ```sh
+   git clone https://github.com/maditya01/SecretShare.git
+   cd SecretShare
+   ```  
+
+2. **Set up the database:**  
+   - Create a MySQL database:  
+     ```sql
+     CREATE DATABASE file_sharing;
+     ```  
 
 
-* <h3> ADVANCE FEATURES:</h3>
+## **How It Works**  
 
-    * Uploader can set the time for which the file is available for download, after that time passes the file is deleted from the server.
+1️⃣ **User registers & logs in** using JWT authentication.  
+2️⃣ **Uploads a file**, and the system generates a **unique access key**.  
+3️⃣ **Shares the key** with others to grant download access.  
+4️⃣ **Receiver enters the key** to download the file.  
+5️⃣ **Uploader sets limits** on downloads & file expiry.  
 
-    * Uploader can revoke a file using its identifier. If he does so then that file identifier can't be used to download a file anymore or file gets deleted from the server.
+## **Contributing**  
 
-* <h3> Some Snapshots from the app:</h3>
+We welcome contributions! Feel free to open an issue or submit a pull request.  
 
+## **License**  
+
+This project is licensed under the **MIT License**.  
