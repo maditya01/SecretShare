@@ -44,7 +44,7 @@ This application provides a **key-based sharing system** where:
 
 - Java **17+**  
 - MySQL **installed & running**  
-- Maven **for dependency management**  
+- JavaFX library **for frontend**  
 
 ### **Steps to Run**  
 
@@ -71,8 +71,4 @@ This application provides a **key-based sharing system** where:
 
 ## **Contributing**  
 
-We welcome contributions! Feel free to open an issue or submit a pull request.  
-
-## **License**  
-
-This project is licensed under the **MIT License**.  
+We welcome contributions! Feel free to open an issue or submit a pull request.
