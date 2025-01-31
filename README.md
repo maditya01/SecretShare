@@ -42,9 +42,10 @@ This application provides a **key-based sharing system** where:
 
 ### **Prerequisites**  
 
-- Java **17+**  
-- MySQL **installed & running**  
-- JavaFX library **for frontend**  
+- Java **17+**
+- MySQL **installed & running**
+- Add MySQL JDBC driver library and  JavaFX jar library.
+- Main.java is the starter for the front end, and Server.java is the starter for the backend.  
 
 ### **Steps to Run**  
 
@@ -57,7 +58,7 @@ This application provides a **key-based sharing system** where:
 2. **Set up the database:**  
    - Create a MySQL database:  
      ```sql
-     CREATE DATABASE file_sharing;
+     CREATE DATABASE smartshare;
      ```  
 
 
@@ -72,3 +73,14 @@ This application provides a **key-based sharing system** where:
 ## **Contributing**  
 
 We welcome contributions! Feel free to open an issue or submit a pull request.
+
+
+## **Screenshots**
+![upload](https://github.com/user-attachments/assets/c7d4f1f3-d5b4-481c-bac5-d23dce20c90c)
+![signup](https://github.com/user-attachments/assets/161cc174-d1be-4dda-9d15-3d95f5ae38bf)
+![login](https://github.com/user-attachments/assets/dec77c04-7405-48d9-8ec6-8eb45429c816)
+![home](https://github.com/user-attachments/assets/150dd91f-6908-4a63-9ffb-bc2f1091d724)
+![history](https://github.com/user-attachments/assets/8b8fb7e2-3205-4934-8e49-7856e4837a43)
+![download](https://github.com/user-attachments/assets/50229d17-f801-46f7-ae73-4ab066699e07)
+![AfterloginHome](https://github.com/user-attachments/assets/2370088e-83aa-4f2c-9856-3245319dbf39)
+
